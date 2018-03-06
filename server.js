@@ -45,7 +45,7 @@ function createTemp(data){
     var htmltemp=`<html>
             <head> 
               <title>
-              $(title)
+              ${title}
               </title>
                  <link href="/ui/style.css" rel="stylesheet" />
               </head>
@@ -53,8 +53,8 @@ function createTemp(data){
                  <div class="container">
                  <a href="/">HOme</a>
                  <hr>
-               <h1>$(heading)</h1>
-               $(content)
+               <h1>${heading}</h1>
+               ${content}
               </div>
              </body>
             </html>`;
