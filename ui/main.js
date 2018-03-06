@@ -1,4 +1,4 @@
 console.log('Loaded!');
 
 var element = document.getElementById('ak');
-element.innnerHTML = 'the text has changed';
+element.innnerhtml = 'the text has changed';
