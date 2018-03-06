@@ -5,17 +5,73 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var articles={
+    'article-one':{
+        title :'article-one',
+        heading:'articleOne',
+        content:` <h1>Hello</h1>
+                   <p>
+                   the quick brown fox jumps over the lazy dogs.the quick brown fox jumps over the lazy dogs.the quick brown fox jumps over the lazy dogs
+                   </p>
+                   <p>
+                   the quick brown fox jumps over the lazy dogs.the quick brown fox jumps over the lazy dogs.the quick brown fox jumps over the lazy dogs
+                  </p>
+                  <p>
+                   the quick brown fox jumps over the lazy dogs.the quick brown fox jumps over the lazy dogs.the quick brown fox jumps over the lazy dogs
+                  </p>`
+                    },
+    'article-two':{
+        title :'article-two',
+        heading:'articleTwo',
+        content:` <h1>Hello</h1>
+                   <p>
+                   the quick brown fox jumps over the lazy dogs.the quick brown fox jumps over the lazy dogs.the quick brown fox jumps over the lazy dogs
+                   </p>
+                   <p>
+                   the quick brown fox jumps over the lazy dogs.the quick brown fox jumps over the lazy dogs.the quick brown fox jumps over the lazy dogs
+                  </p>
+                  <p>
+                   the quick brown fox jumps over the lazy dogs.the quick brown fox jumps over the lazy dogs.the quick brown fox jumps over the lazy dogs
+                  </p>`
+                    
+    }
+};
+
+function createTemp(data){
+    var title=data.title;
+    var heading= data.heading;
+    var content= data.content;
+    
+    var htmltemp=`<html>
+            <head> 
+              <title>
+              $(title)
+              </title>
+                 <link href="/ui/style.css" rel="stylesheet" />
+              </head>
+             <body>
+                 <div class="container">
+                 <a href="/">HOme</a>
+                 <hr>
+               <h1>$(heading)</h1>
+               $(content)
+              </div>
+             </body>
+            </html>`;
+
+return htmltemp;
+
+}
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function (req, res) {
-   res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+app.get('/:articleNames', function (req, res) {
+    var artcilesName= req.params.articlesNames;
+   res.send(createTemp(articles[articlesName]));
 });
 
-app.get('/article-two', function (req, res) {
-   res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
