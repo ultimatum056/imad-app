@@ -20,7 +20,7 @@ var articles={
                    the quick brown fox jumps over the lazy dogs.the quick brown fox jumps over the lazy dogs.the quick brown fox jumps over the lazy dogs
                   </p>`
                     },
-    'article-two':{
+    'articletwo':{
         title :'article-two',
         heading:'articleTwo',
         content:` <h1>Hello</h1>
