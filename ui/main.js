@@ -26,3 +26,22 @@ button.onclick = function(){
     request.send(null);
    
 };
+
+//submit name
+
+var nameIp = document.getElementById('name');
+var name =nameIp.value;
+var submit = document.getElementById('submit_btn');
+submit.onlclick =function(){
+    
+    //mkae a req to server and send name
+    //capture
+    var names=['name1','namne2','name3'];
+    var list='';
+    for(var i=0;i<names.length;i++){
+        list +='<li>' + names[i] + '</li>';
+        
+    }
+  var ul=document.getElementById('namelist');
+  ul.innerHTML = list;
+}
