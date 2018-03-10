@@ -94,7 +94,15 @@ app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
-
+var names=[];
+app.get('/submit-name/:name', function (req, res) {
+    //get the name from req obj
+    var name =req.param.name;
+    
+    names.push(name);
+    
+  res.send(JSON.stringify(names));
+});
 
 
 var port = 80;
