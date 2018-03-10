@@ -63,6 +63,17 @@ return htmltemp;
 
 }
 
+var names=[];
+app.get('/submit-name', function (req, res) {
+    
+    //get the name from req obj
+        var name =req.query.name;
+    
+    names.push(name);
+    
+  res.send(JSON.stringify(names));
+});
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -94,16 +105,7 @@ app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
-var names=[];
-app.get('/submit-name', function (req, res) {
-    
-    //get the name from req obj
-        var name =req.query.name;
-    
-    names.push(name);
-    
-  res.send(JSON.stringify(names));
-});
+
 
 
 var port = 80;
