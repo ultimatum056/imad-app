@@ -6,10 +6,10 @@ ele.innerHTML='new vaalue';
 //move the img
 var img = document.getElementById('img');
 
-var marginLeft =0 ;
+var marginLeft = 0 ;
 
 function moveRight(){
-    marginLeft = marginLeft +'10';
+    marginLeft = marginLeft + 10;
     img.style.marginLeft = marginLeft + 'px';
 }
 
