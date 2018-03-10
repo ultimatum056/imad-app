@@ -36,7 +36,7 @@ submit.onclick =function(){
     
     //mkae a req to server and send name
     //capture
-    var names=['name1','namne2','name3'];
+    var names=['name1','namne2','name3','name 4'];
     var list='';
     for(var i=0;i<names.length;i++){
         list +='<li>' + names[i] + '</li>';
