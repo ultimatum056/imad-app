@@ -32,7 +32,7 @@ button.onclick = function(){
 var nameIp = document.getElementById('name');
 var name =nameIp.value;
 var submit = document.getElementById('submit_btn');
-submit.onlclick =function(){
+submit.onclick =function(){
     
     //mkae a req to server and send name
     //capture
