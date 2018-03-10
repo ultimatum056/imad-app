@@ -1,4 +1,9 @@
 console.log('Loaded!');
 
 var element = document.getElementById('ak');
-element.innnerhtml = 'the text has changed';
+element.innnerHTML = 'the text has changed';
+//move the img
+var img = document.getElementById('img');
+img.onclick = function(){
+    img.style.marginleft='100px';
+};
