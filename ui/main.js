@@ -59,7 +59,7 @@ submit.onclick =function(){
    //make the req
    var nameIp = document.getElementById('name');
 var name =nameIp.value;
-   request.open('GET','http://ashishkothari056.imad.hasura-app.io/submit-name?='+name,true);
+   request.open('GET','http://ashishkothari056.imad.hasura-app.io/submit-name?name='+name,true);
     request.send(null); 
     //mkae a req to server and send name
     //capture
