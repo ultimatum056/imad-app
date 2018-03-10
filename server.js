@@ -97,7 +97,7 @@ app.get('/ui/main.js', function (req, res) {
 var names=[];
 app.get('/submit-name/:name', function (req, res) {
     //get the name from req obj
-    var name =req.param.name;
+    var name =req.params.name;
     
     names.push(name);
     
