@@ -1,19 +1,12 @@
-console.log('Loaded!');
-
-var ele= document.getElementById('ask');
-ele.innerHTML='new vaalue';
-
-//move the img
-var img = document.getElementById('img');
-
-var marginLeft = 0 ;
-
-function moveRight(){
-    marginLeft = marginLeft + 3;
-    img.style.marginLeft = marginLeft + 'px';
-}
-
-img.onclick = function(){
-    var interval = setInterval(moveRight,90);
+//counter code
+var button = document.getElemetById('counter');
+button.onclick = function(){
+    //make a request to the counter endpoint
+    
+    //capture the resp & store it in var
+    
+    //render the var in correct span
+    counter=counter+1;
+    var span =document.getElementById('count');
+    span.innerHTML = counter.toString();
 };
-
